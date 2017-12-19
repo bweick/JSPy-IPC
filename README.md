@@ -3,6 +3,7 @@
 Proof of concept for an IPC based Python wrapper to 0x.js library.
 
 Dependencies:
+
 Python:
 -socket
 -time

@@ -25,5 +25,13 @@ run_process method (which is also used to test if the js server is running befor
 name to be called and associated variables to run that function. All 0x endpoints are housed within the "operations" object on the js 
 server. Once calculations are done on the js server the result is returned back to the Python client. As currently constructed the script 
 works using TestRPC as a proof of concept, but expansion to allow for further Web3 providers will be necessary. 
+
+Further Work:
+- Allow user to set ports on computer and Web3 provider
+- Populate object on js server with all necessary 0x endpoints
+- Tests
+- Comprehensive Error Handling
+- Make sure server spin up logic works for all OS
+- Package into Python module
   
   

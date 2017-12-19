@@ -5,18 +5,18 @@ Proof of concept for an IPC based Python wrapper to 0x.js library.
 Dependencies:
 
 Python:
--socket
--time
--sys
--json
--subprocess
+- socket
+- time
+- sys
+- json
+- subprocess
     
 JavaScript:
--Node
--0x.js
--Web3
--Ethereumjs-testrpc
--net (Node)
+- Node
+- 0x.js
+- Web3
+- Ethereumjs-testrpc
+- net (Node)
 
 Echo_client.py is the script that sets up both the necessary Ethereum server and JavaScript server in the __init__ function. Since the 
 JavaScript server is reliant on the Ethereum server being active in order to have it's Web3 provider set up the js server is only started 

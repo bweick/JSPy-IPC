@@ -24,7 +24,7 @@ class ClientCall(object):
 
         def check_server():
             try:
-                self.run_process('testConnection')
+                self._run_process('testConnection')
             except:
                 check_server()
 
@@ -32,7 +32,7 @@ class ClientCall(object):
 
         #self._js_serv = Popen('node echo_server.js %s %s' %(host, str(self._js_port)))
 
-    def run_process(self, fxn, params={}):
+    def _run_process(self, fxn, params={}):
         # Create a TCP/IP socket
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -59,6 +59,15 @@ class ClientCall(object):
             print(sys.stderr, 'closing socket')
             sock.close()
 
+    def get_salt(self):
+        self._run_process('salt')
+
+    def get_null_address(self):
+        self._run_process('nullAddress')
+
+    def get_zrx_address(self):
+        self._run_process('zrxAddress')
+
     def kill_process(self):
         self._eth_node.kill()
         #self._js_serv.kill()
@@ -66,9 +75,9 @@ class ClientCall(object):
 if __name__ == "__main__":
     call = ClientCall()
 
-    call.run_process('zrxAddress')
-    call.run_process('nullAddress')
-    call.run_process('salt')
+    call.get_zrx_address()
+    call.get_null_address()
+    call.get_salt()
     print("killing server...")
     call.kill_process()
     print("server killed.")
